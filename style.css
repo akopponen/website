@@ -775,6 +775,7 @@ a {
 }
 #showMoreLink{
     display: none;
+    transition: 0.4s;
 }
 /*----- media query for small screen -----*/
 
