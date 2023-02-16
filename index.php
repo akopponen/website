@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <title>Social Media Website</title>
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,61 +13,61 @@
 
     <nav class="navbar">
         <div class="navbar-left">
-            <a href="index.html" class="logo"><img src="images/testsite_logo_500x500.png"></a>
+            <a href="index.html" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/images/testsite_logo_500x500.png"></a>
 
             <div class="search-box">
-                <img src="images/Icons/search.png">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/search.png">
                 <input type="text" placeholder="search">
             </div>
 
         </div>
         <div class="navbar-center">
             <ul>
-                <li><a href="#" class="active-link"><img src="images/Icons/home.png"> <span>Home</span></a></li>
-                <li><a href="#"><img src="images/Icons/network.png"> <span>My Network</span></a></li>
-                <li><a href="#"><img src="images/Icons/job.png"> <span>Jobs</span></a></li>
-                <li><a href="#"><img src="images/Icons/message.png"> <span>Messaging</span></a></li>
-                <li><a href="#"><img src="images/Icons/notification.png"> <span>Notifications</span></a></li>
+                <li><a href="#" class="active-link"><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/home.png"> <span>Home</span></a></li>
+                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/network.png"> <span>My Network</span></a></li>
+                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/job.png"> <span>Jobs</span></a></li>
+                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/message.png"> <span>Messaging</span></a></li>
+                <li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/notification.png"> <span>Notifications</span></a></li>
             </ul>
         </div>
         <div class="navbar-right">
             <div class="online">
-                <img src="images/8-LEVK5LPwqnRXb3K.png" class="nav-profile-img" onclick="toggleMenu()">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png" class="nav-profile-img" onclick="toggleMenu()">
             </div>
         </div>
         <!------- profile-drop-down-menu ------->
         <div class="profile-menu-wrap" id="profileMenu">
             <div class="profile-menu">
                 <div class="user-info">
-                    <img src="images/8-LEVK5LPwqnRXb3K.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png">
                     <div>
                         <h3>Saxophone Rat</h3>
-                        <a href="profile.html">See your profile</a>
+                        <a href="profile.php">See your profile</a>
                     </div>
                 </div>
                 <hr>
                 <a href="#" class="profile-menu-link">
-                    <img src="images/Icons/feedback.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/feedback.png">
                     <p>Give Feedback</p>
                     <span>></span>
                 </a>
                 <a href="#" class="profile-menu-link">
-                    <img src="images/Icons/settings.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/settings.png">
                     <p>Settings & Privacy</p>
                     <span>></span>
                 </a>
                 <a href="#" class="profile-menu-link">
-                    <img src="images/Icons/help_2.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/help_2.png">
                     <p>Help & Support</p>
                     <span>></span>
                 </a>
                 <a href="#" class="profile-menu-link">
-                    <img src="images/Icons/display.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/display.png">
                     <p>Display & Accessibility</p>
                     <span>></span>
                 </a>
                 <a href="#" class="profile-menu-link">
-                    <img src="images/Icons/logout.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/logout.png">
                     <p>Logout</p>
                     <span>></span>
                 </a>
@@ -79,11 +79,13 @@
         <!------- left-sidebar ------->
         <div class="left-sidebar">
             <div class="sidebar-profile-box">
-                <img src="images/profile_banner.jpg" width="100%">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/profile_banner.jpg" width="100%">
                 <div class="sidebar-profile-info">
-                    <img src="images/8-LEVK5LPwqnRXb3K.png">
-                    <h1>Saxophone Rat</h1>
-                    <h3>Web Developer at Microsoft</h3>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png">
+                    <!-- name text -->
+                    <h1><?php the_field("profile_name_text"); ?></h1>
+                    <!-- profile description -->
+                    <h3><?php the_field("profile_description_text"); ?></h3>
                     <ul>
                         <li>Your profile views<span>52</span></li>
                         <li>Your post views<span>812</span></li>
@@ -124,35 +126,41 @@
 
             <div class="create-post">
                 <div class="create-post-input">
-                    <img src="images/8-LEVK5LPwqnRXb3K.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png">
                     <textarea rows="2" placeholder="Write a post"></textarea>
                 </div>
                 <div class="create-post-links">
-                    <li><img src="images/Icons/camera.png">Photo</li>
-                    <li><img src="images/Icons/video_cam.png">Video</li>
-                    <li><img src="images/Icons/event_copy.png">Event</li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/camera.png">Photo</li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/video_cam.png">Video</li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/images/Icons/event_copy.png">Event</li>
                     <li>Post</li>
                 </div>
             </div>
             <div class="sort-by">
                 <hr>
-                <p>Sort by: <span>top <img src="images/Icons/arrow_down.png"></span></p>
+                <p>Sort by: <span>top <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/arrow_down.png"></span></p>
             </div>
             <div class="post">
                 <div class="post-author">
-                    <img src="images/8-cNwktPUwN5tZ8K1.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-cNwktPUwN5tZ8K1.png">
                     <div>
-                        <h1>Magic Rat</h1>
-                        <small>Founder and CEO at Gellelio Group | Angel Investor</small>
+                        <!-- <h1>Magic Rat</h1> -->
+                        <h1><?php the_field("white_box_heater_text"); ?></h1   >
+                        <small><?php the_field("white_box_description_text"); ?></small>
                         <small>2 hours ago</small>
                     </div>
                 </div>
-                <p>The success of every websites depends on search engine optimisation and digital marketing strategy. If you are on first page of all major search engines then you are ahead among your competitors.</p>
-                <img src="images/post1.jpg" width="100%">
+                <p><?php the_field("white_box_post_description_text"); ?></p>
+                <?php $image = get_field("white_box_post_pic"); ?>
+                <!-- <img src="<?php echo get_template_directory_uri(); ?>/images/post1.jpg" width="100%"> -->
+                <div class="post-img">
+                    <img src="<?php echo $image["url"]; ?>" alt="<?php echo $image["title"]; ?>"/>
+                </div>
+                
                 <div class="post-stats">
-                    <img src="images/Icons/like.png">
-                    <img src="images/Icons/heart.png">
-                    <img src="images/Icons/clap.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/heart.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/clap.png">
                     <span class="liked-users">Abhinav mishra and 75 others</span>
                 </div>
                 <div>
@@ -162,30 +170,30 @@
             <!------- post 1 ------->
             <div class="post-activity">
                 <div>
-                    <img src="images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
-                    <img src="images/Icons/arrow_down.png" class="post-activity-arrow-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/arrow_down.png" class="post-activity-arrow-icon">
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/like_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like_post.png">
                     <span>Like</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/comment_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/comment_post.png">
                     <span>Comment</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/share_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/share_post.png">
                     <span>Share</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/send_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/send_post.png">
                     <span>Send</span>
                 </div>
             </div>
             <!------- post 2 ------->
             <div class="post">
                 <div class="post-author">
-                    <img src="images/8-MdscR4uyjyRRldy.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-MdscR4uyjyRRldy.png">
                     <div>
                         <h1>Rat With Magic</h1>
                         <small>Founder and CEO at Gellelio Group | Angel Investor</small>
@@ -193,11 +201,11 @@
                     </div>
                 </div>
                 <p>The success of every websites depends on search engine optimisation and digital marketing strategy. If you are on first page of all major search engines then you are ahead among your competitors.</p>
-                <img src="images/post2.jpg" width="100%">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/post2.jpg" width="100%">
                 <div class="post-stats">
-                    <img src="images/Icons/like.png">
-                    <img src="images/Icons/heart.png">
-                    <img src="images/Icons/clap.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/heart.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/clap.png">
                     <span class="liked-users">Abhinav mishra and 75 others</span>
                 </div>
                 <div>
@@ -206,30 +214,30 @@
             </div>
             <div class="post-activity">
                 <div>
-                    <img src="images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
-                    <img src="images/Icons/arrow_down.png" class="post-activity-arrow-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/arrow_down.png" class="post-activity-arrow-icon">
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/like_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like_post.png">
                     <span>Like</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/comment_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/comment_post.png">
                     <span>Comment</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/share_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/share_post.png">
                     <span>Share</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/send_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/send_post.png">
                     <span>Send</span>
                 </div>
             </div>
             <!------- post 3 ------->
             <div class="post">
                 <div class="post-author">
-                    <img src="images/8-Hnq4qLg3JLYYZFY.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-Hnq4qLg3JLYYZFY.png">
                     <div>
                         <h1>Raccoon Climbing</h1>
                         <small>Founder and CEO at Gellelio Group | Angel Investor</small>
@@ -237,11 +245,11 @@
                     </div>
                 </div>
                 <p>The success of every websites depends on search engine optimisation and digital marketing strategy. If you are on first page of all major search engines then you are ahead among your competitors.</p>
-                <img src="images/post3.jpg" width="100%">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/post3.jpg" width="100%">
                 <div class="post-stats">
-                    <img src="images/Icons/like.png">
-                    <img src="images/Icons/heart.png">
-                    <img src="images/Icons/clap.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/heart.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/clap.png">
                     <span class="liked-users">Abhinav mishra and 75 others</span>
                 </div>
                 <div>
@@ -250,30 +258,30 @@
             </div>
             <div class="post-activity">
                 <div>
-                    <img src="images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
-                    <img src="images/Icons/arrow_down.png" class="post-activity-arrow-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/arrow_down.png" class="post-activity-arrow-icon">
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/like_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like_post.png">
                     <span>Like</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/comment_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/comment_post.png">
                     <span>Comment</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/share_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/share_post.png">
                     <span>Share</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/send_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/send_post.png">
                     <span>Send</span>
                 </div>
             </div>
             <!------- post 4 ------->
             <div class="post">
                 <div class="post-author">
-                    <img src="images/8-BwywlHOiIDXoGaB.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-BwywlHOiIDXoGaB.png">
                     <div>
                         <h1>Dog with a beret</h1>
                         <small>Founder and CEO at Gellelio Group | Angel Investor</small>
@@ -281,11 +289,11 @@
                     </div>
                 </div>
                 <p>The success of every websites depends on search engine optimisation and digital marketing strategy. If you are on first page of all major search engines then you are ahead among your competitors.</p>
-                <img src="images/post4.jpg" width="100%">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/post4.jpg" width="100%">
                 <div class="post-stats">
-                    <img src="images/Icons/like.png">
-                    <img src="images/Icons/heart.png">
-                    <img src="images/Icons/clap.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/heart.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/clap.png">
                     <span class="liked-users">Abhinav mishra and 75 others</span>
                 </div>
                 <div>
@@ -294,30 +302,30 @@
             </div>
             <div class="post-activity">
                 <div>
-                    <img src="images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
-                    <img src="images/Icons/arrow_down.png" class="post-activity-arrow-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-LEVK5LPwqnRXb3K.png" class="post-activity-user-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/arrow_down.png" class="post-activity-arrow-icon">
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/like_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like_post.png">
                     <span>Like</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/comment_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/comment_post.png">
                     <span>Comment</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/share_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/share_post.png">
                     <span>Share</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/send_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/send_post.png">
                     <span>Send</span>
                 </div>
             </div>
             <!------- post 5 ------->
             <div class="post">
                 <div class="post-author">
-                    <img src="images/8-BwywlHOiIDXoGaB.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-BwywlHOiIDXoGaB.png">
                     <div>
                         <h1>Dog with a beret</h1>
                         <small>Founder and CEO at Gellelio Group | Angel Investor</small>
@@ -325,11 +333,11 @@
                     </div>
                 </div>
                 <p>The success of every websites depends on search engine optimisation and digital marketing strategy. If you are on first page of all major search engines then you are ahead among your competitors.</p>
-                <img src="images/post5.jpg" width="100%">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/post5.jpg" width="100%">
                 <div class="post-stats">
-                    <img src="images/Icons/like.png">
-                    <img src="images/Icons/heart.png">
-                    <img src="images/Icons/clap.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/heart.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/clap.png">
                     <span class="liked-users">Abhinav mishra and 75 others</span>
                 </div>
                 <div>
@@ -338,23 +346,23 @@
             </div>
             <div class="post-activity">
                 <div>
-                    <img src="images/8-BwywlHOiIDXoGaB.png" class="post-activity-user-icon">
-                    <img src="images/Icons/arrow_down.png" class="post-activity-arrow-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-BwywlHOiIDXoGaB.png" class="post-activity-user-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/arrow_down.png" class="post-activity-arrow-icon">
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/like_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/like_post.png">
                     <span>Like</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/comment_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/comment_post.png">
                     <span>Comment</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/share_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/share_post.png">
                     <span>Share</span>
                 </div>
                 <div class="post-activity-link">
-                    <img src="images/Icons/send_post.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/send_post.png">
                     <span>Send</span>
                 </div>
             </div>
@@ -363,7 +371,7 @@
         <!------- right-sidebar ------->
         <div class="right-sidebar">
             <div class="sidebar-news">
-                <img src="images/Icons/more.png" class="info-icon">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/Icons/more.png" class="info-icon">
                 <h3>Trending News</h3>
                 <a href="#">High demand for skilled people</a>
                 <span>1d ago &middot; 12,936 readers</span>
@@ -385,8 +393,8 @@
                 <small>Ad &middot; &middot; &middot;</small>
                 <p>Master the 5 principles of web design</p>
                 <div>
-                    <img src="images/8-BwywlHOiIDXoGaB.png">
-                    <img src="images/logo.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/8-BwywlHOiIDXoGaB.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
                 </div>
                 <b>Brand and Demand in Xiaomi</b>
                 <a href="#" class="ad-link">Learn More</a>
@@ -400,7 +408,7 @@
                 <a href="#">Get the App</a>
                 <a href="#">More</a>
                 <div class="copyright-msg">
-                    <img src="images/testsite_logo_500x500.png">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/testsite_logo_500x500.png">
                     <p>Sample Text &#169; 2023 All rights reserved</p>
                 </div>
             </div>

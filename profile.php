@@ -13,7 +13,7 @@
 
     <nav class="navbar">
         <div class="navbar-left">
-            <a href="index.html" class="logo"><img src="images/testsite_logo_500x500.png"></a>
+            <a href="index.php" class="logo"><img src="images/testsite_logo_500x500.png"></a>
 
             <div class="search-box">
                 <img src="images/Icons/search.png">
